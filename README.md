@@ -28,4 +28,4 @@ O diretório ``localhost`` contém mais dois diretórios ``tasks`` e ``vars``.
 Comando para execução de todo o conjunto de playbook.
 
 - `ansible-playbook -i hosts local.yml -vvv`
-> Pode ser necessário executar o comando com previlégios de super-usuário, utilizando o comando sudo.
+> Pode ser necessário executar o comando com previlégios de super-usuário utilizando o comando sudo.
