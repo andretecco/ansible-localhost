@@ -1,0 +1,4 @@
+*.retry
+*.log
+*.py
+.DS_Store

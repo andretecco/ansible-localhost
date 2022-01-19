@@ -1,0 +1,2 @@
+---
+- import_tasks: config_instalacao_programas.yml
