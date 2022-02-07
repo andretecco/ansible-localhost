@@ -5,3 +5,5 @@
     update_cache: yes
   with_items:
     - {name: '{{ instalacao_programas }}', state: 'latest'}
+  tags:
+  - config_instalacao_programas
