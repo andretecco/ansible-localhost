@@ -1,0 +1,42 @@
+- name: Copiando arquivo daemon.json Docker
+  copy:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: '{{ item.owner }}'
+    group: '{{ item.group }}'
+    mode: '{{ item.mode }}'
+  with_items:
+      - {src: 'docker/daemon.json.conf',dest: '/etc/docker/daemon.json', owner: 'root', group: 'root', mode: '0600'}
+  tags:
+  - config_docker
+  - docker_daemon_json
+  notify:
+    - restart_docker
+
+- name: Listando ID completo de Containers em execução
+  command: docker ps -q --no-trunc
+  register: docker_ps
+  tags:
+  - config_docker
+  - docker_limpeza
+
+- name: Buscando Pastas com IDs diferentes de containers em execução
+  find:
+    path: /var/lib/docker/containers
+    file_type: directory
+    recurse: no
+    excludes: "{{ docker_ps.stdout_lines }}"
+  register: docker_pasta
+  tags:
+  - config_docker
+  - docker_limpeza
+
+- name: Remover Pastas Antigas (/var/lib/docker/containers)
+  file:
+    path: "{{ item.path }}"
+    state: absent
+    recurse: no
+  loop: "{{ docker_pasta.files }}"
+  tags:
+  - config_docker
+  - docker_limpeza
