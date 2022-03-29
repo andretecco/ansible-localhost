@@ -25,6 +25,7 @@ O diretório ``localhost`` contém mais diretórios.
 - ``tasks`` - onde estão as instruções que o Ansible deve seguir.
 - ``vars`` - onde estão as variáveis que o Ansible irá buscar na execução dos Playbooks.
 - ``handlers`` - onde estão as intruções para manipular os serviços, exemplo restart quando houver alterações nos arquivos de configuração.
+- ``files`` - onde estãos os arquivos de configuração, por exemplo arquivos .conf.
 
 Comando para execução de todo o conjunto de playbook.
 
