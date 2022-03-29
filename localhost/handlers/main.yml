@@ -1,9 +1,14 @@
-- name: Restart logrotate
+- name: restart_logrotated
   systemd:
     name: logrotate
     state: restarted
 
-- name: Restart systemd-journald
+- name: restart_systemd-journald
   systemd:
     name: systemd-journald
+    state: restarted
+
+- name: restart_docker
+  systemd:
+    name: docker
     state: restarted
