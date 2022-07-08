@@ -3,6 +3,7 @@ Playbook para configuração e instalação local no Ubuntu
 
 Este Playbook foi testado com a versão:
 - SO: Ubuntu 20.04
+- Ansible: 2.9
 
 > Para outras versões pode ser necessário alterar o nome dos pacotes e/ou acrescentar pacotes conforme a sua necessidade.
 
