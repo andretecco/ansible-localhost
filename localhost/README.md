@@ -19,4 +19,4 @@ BSD
 Informação sobre o Autor
 ------------------
 
-[@andretecco link](https://twitter.com/andretecco)
+[@andretecco](https://twitter.com/andretecco)
