@@ -1,3 +1,4 @@
 ---
 - import_tasks: config_instalacao_programas.yml
 - import_tasks: config_logs.yml
+- import_tasks: config_docker.yml
